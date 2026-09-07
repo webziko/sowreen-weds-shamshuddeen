@@ -314,6 +314,22 @@ body.cover-active { overflow: hidden; height: 100svh; }
   color: #fff;
   text-shadow: 0 3px 18px rgba(0,0,0,0.5), 0 0 30px rgba(230,207,148,0.25);
 }
+.couple-name--groom {
+  font-size: clamp(1.8rem, 8.4vw, 3.2rem);
+  white-space: nowrap;
+}
+.ca-tag {
+  font-family: var(--f-serif);
+  font-size: 0.74em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: 0.08em;
+  display: inline-block;
+  margin-right: 0.15em;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
 .couple-parent {
   font-size: 0.92rem;
   letter-spacing: 0.03em;

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
+  <title>Sowreen &amp; CA Shamshuddeen BM — Wedding Invitation</title>
+  <meta name="description" content="With the blessings of Allah, you are cordially invited to the Nikah of Sowreen &amp; CA Shamshuddeen BM — Saturday, 26 September 2026, Indian Auditorium, Neralkatte, Mani. Insha Allah." />
+  <meta name="theme-color" content="#1f2a44" />
+  <meta name="author" content="Sowreen &amp; CA Shamshuddeen BM" />
+
+  <link rel="canonical" href="https://sowreen-weds-shamshuddeen.vercel.app/" />
+
+  <!-- Open Graph / social preview (absolute URLs required for WhatsApp/Facebook) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sowreen weds Shamshuddeen" />
+  <meta property="og:title" content="Sowreen &amp; CA Shamshuddeen BM — Wedding Invitation" />
+  <meta property="og:description" content="You are cordially invited to the Nikah — Saturday, 26 September 2026, Indian Auditorium, Neralkatte, Mani. Insha Allah." />
+  <meta property="og:url" content="https://sowreen-weds-shamshuddeen.vercel.app/" />
+  <meta property="og:image" content="https://sowreen-weds-shamshuddeen.vercel.app/assets/og-image.jpg?v=3" />
+  <meta property="og:image:secure_url" content="https://sowreen-weds-shamshuddeen.vercel.app/assets/og-image.jpg?v=3" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Sowreen weds Shamshuddeen — Wedding Invitation" />
+  <meta property="og:locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sowreen &amp; CA Shamshuddeen BM — Wedding Invitation" />
+  <meta name="twitter:description" content="You are cordially invited to the Nikah — Saturday, 26 September 2026, Indian Auditorium, Neralkatte, Mani. Insha Allah." />
+  <meta name="twitter:image" content="https://sowreen-weds-shamshuddeen.vercel.app/assets/og-image.jpg?v=3" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+  <!-- Structured Data / Schema.org for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Nikah Ceremony of Sowreen & CA Shamshuddeen BM",
+    "startDate": "2026-09-26T17:45:00+05:30",
+    "endDate": "2026-09-26T21:30:00+05:30",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Indian Auditorium",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Neralkatte, Mani",
+        "addressLocality": "Bantwal",
+        "addressRegion": "Karnataka",
+        "addressCountry": "IN"
+      }
+    },
+    "image": [
+      "https://sowreen-weds-shamshuddeen.vercel.app/assets/og-image.jpg"
+    ],
+    "description": "Wedding celebration and Nikah ceremony of Sowreen & CA Shamshuddeen BM at Indian Auditorium, Neralkatte, Mani followed by dinner."
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Marcellus&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Single background music track (user gesture starts it on envelope open). -->
+  <audio id="bg-music" loop preload="auto" playsinline>
+    <source src="assets/Wedding Nasheed - Sameer Miya.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ===== Fixed viewport frame: keeps overlays inside the phone column on desktop ===== -->
+  <div class="viewport-frame" aria-hidden="false">
+
+    <!-- Ambient floating petals (very subtle, whole-page) -->
+    <canvas id="ambient" class="ambient" aria-hidden="true"></canvas>
+
+    <!-- ===== Section 1: ENVELOPE COVER ===== -->
+    <div id="cover" class="cover" role="dialog" aria-label="Wedding invitation envelope. Tap to open.">
+      <!-- Poster shown first; swapped for the playing video on tap. Structured so the
+           whole media block can be replaced by any other envelope video later. -->
+      <div class="cover__media">
+        <img id="cover-poster" class="cover__poster" src="assets/envelope-poster.jpg"
+             alt="A blush embossed envelope with a gold wax seal reading Tap to open, and You are invited." />
+        <video id="cover-video" class="cover__video" muted playsinline preload="auto"
+               poster="assets/envelope-poster.jpg">
+          <source src="assets/envelope.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- Full-cover tap target (the envelope's own gold seal is the visual cue) -->
+      <button id="cover-open" class="cover__open" aria-label="Tap to open the invitation"></button>
+
+      <button id="cover-skip" class="cover__skip" type="button">Skip &rsaquo;</button>
+      <div id="cover-flash" class="cover__flash" aria-hidden="true"></div>
+    </div>
+
+    <!-- ===== Floating sound toggle (HUD) ===== -->
+    <button id="sound-toggle" class="sound-toggle is-hidden" type="button"
+            aria-label="Turn music on" aria-pressed="false">
+      <svg class="ico ico--off" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/>
+        <path d="M16 8l6 6M22 8l-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      </svg>
+      <svg class="ico ico--on" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/>
+        <path d="M16.5 8.5a5 5 0 0 1 0 7M18.8 6.2a8 8 0 0 1 0 11.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ===== The invitation (scrolling phone column) ===== -->
+  <main id="app" class="phone" aria-label="Wedding invitation">
+
+    <!-- ===== Section 2: VIDEO HERO ===== -->
+    <section id="hero" class="hero section-full">
+      <video id="hero-video" class="hero__video" autoplay muted playsinline preload="auto"
+             poster="assets/hero-poster.jpg">
+        <source src="assets/hero.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__scrim"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">Request the pleasure of your company &amp; blessings to celebrate the wedding of</p>
+
+        <h1 class="couple-name script reveal">Sowreen</h1>
+        <p class="couple-parent reveal">Daughter of Mrs. &amp; Mr. K Abdul Salam<br><span style="font-size: 0.85em; opacity: 0.85;">Grand D/o Late Mohammed &amp; Late Chaiyabba &bull; Farangipete</span></p>
+
+        <div class="amp reveal"><span>&amp;</span></div>
+
+        <h1 class="couple-name script reveal">CA Shamshuddeen BM</h1>
+        <p class="couple-parent reveal">Son of Mr. Abbas BM<br><span style="font-size: 0.85em; opacity: 0.85;">Aysha Cottage, Panthadka, Kodaje, Neralkatte</span></p>
+      </div>
+      <a class="scroll-cue" href="#welcome" aria-label="Scroll down">
+        <span class="scroll-cue__text">Scroll</span>
+        <span class="scroll-cue__chevron"></span>
+      </a>
+    </section>
+
+    <!-- ===== Section 3: WELCOME / BLESSING ===== -->
+    <section id="welcome" class="welcome section-pad">
+      <div class="bismillah reveal">
+        <p class="bismillah__ar">In the name of Allah</p>
+        <p class="bismillah__en">the Most Gracious and the Most Merciful</p>
+      </div>
+
+      <div class="verse reveal">
+        <p class="verse__text">&ldquo;And We created you in pairs&rdquo;</p>
+        <p class="verse__ref">Quran 78:8</p>
+      </div>
+
+      <h2 class="title reveal">Welcome</h2>
+
+      <p class="welcome__body reveal">
+        We cordially request the pleasure of your company and blessings to celebrate the <em>Nikah</em> of
+        <strong>Sowreen</strong> &amp; <strong>CA Shamshuddeen BM</strong>.
+        As they begin their blessed journey together in faith and love, we thank you for
+        gracing this joyful occasion.
+      </p>
+
+      <a class="scroll-cue scroll-cue--dark reveal" href="#scratch" aria-label="Scroll down">
+        <span class="scroll-cue__text">Continue</span>
+        <span class="scroll-cue__chevron"></span>
+      </a>
+    </section>
+
+    <!-- ===== Section 4: SCRATCH TO REVEAL → OUR FOREVER BEGINS ===== -->
+    <section id="scratch" class="reveal-heart section-full">
+      <canvas id="petals" class="reveal-heart__petals" aria-hidden="true"></canvas>
+      <div class="reveal-heart__inner reveal">
+        <h2 class="reveal-heart__heading script" id="forever-heading">Scratch to Reveal</h2>
+        <div class="ornament" aria-hidden="true">
+          <span class="ornament__line"></span>
+          <span class="ornament__heart">&#9829;</span>
+          <span class="ornament__line"></span>
+        </div>
+
+        <div class="scratch-heart" id="scratch-card">
+          <!-- Revealed underneath: gold heart outline + the invite -->
+          <div class="heart-badge">
+            <svg viewBox="0 0 200 190" class="heart-badge__svg" aria-hidden="true">
+              <path class="heart-badge__path" d="M100 175S12 122 12 60C12 30 36 12 62 12c18 0 31 10 38 24 7-14 20-24 38-24 26 0 50 18 50 48 0 62-88 115-88 115z"/>
+            </svg>
+            <div class="heart-badge__text">
+              <span class="heart-badge__label">You&rsquo;re Invited</span>
+              <span class="heart-badge__day">Saturday, 26 September 2026</span>
+              <span class="heart-badge__time">5:45 PM</span>
+            </div>
+          </div>
+          <!-- Glittery rose foil, clipped to the same heart, scratched away -->
+          <canvas id="scratch-canvas" class="scratch-heart__canvas"
+                  aria-label="Scratch the heart to reveal"></canvas>
+        </div>
+
+        <p class="subtle subtle--tiny" id="scratch-hint">Scratch the heart to reveal</p>
+      </div>
+    </section>
+
+    <!-- ===== Section 6: COUNTDOWN ===== -->
+    <section id="countdown" class="countdown section-pad">
+      <h2 class="title reveal" id="cd-title">Counting Down to the Nikah</h2>
+      <p class="subtle reveal" id="cd-sub">Saturday, 26 September 2026 &middot; 5:45 PM (IST)</p>
+      <div class="cd reveal" id="cd" role="timer" aria-live="off">
+        <div class="cd__unit"><span class="cd__num" id="cd-days">00</span><span class="cd__lbl" id="cd-l1">Days</span></div>
+        <div class="cd__unit"><span class="cd__num" id="cd-hours">00</span><span class="cd__lbl" id="cd-l2">Hours</span></div>
+        <div class="cd__unit"><span class="cd__num" id="cd-mins">00</span><span class="cd__lbl" id="cd-l3">Minutes</span></div>
+        <div class="cd__unit"><span class="cd__num" id="cd-secs">00</span><span class="cd__lbl" id="cd-l4">Seconds</span></div>
+      </div>
+    </section>
+
+    <!-- ===== Section 7: PROGRAM / TIMELINE ===== -->
+    <section id="program" class="program section-pad">
+      <h2 class="title reveal">The Celebrations</h2>
+
+      <div class="timeline">
+        <!-- Nikah -->
+        <article class="event reveal">
+          <span class="event__dot" aria-hidden="true"></span>
+          <p class="event__label">Nikah Ceremony</p>
+          <p class="event__date">Saturday, 26 September 2026</p>
+          <p class="event__hijri">15 Rabi al-Akhir 1448</p>
+          <p class="event__time">5:45 PM (IST)</p>
+          <p class="event__venue">Indian Auditorium, Neralkatte, Mani</p>
+          <div class="event__actions">
+            <a class="btn btn--sm" id="gcal-nikah" target="_blank" rel="noopener">Add to Google Calendar</a>
+          </div>
+        </article>
+
+        <!-- Dinner -->
+        <article class="event reveal">
+          <span class="event__dot" aria-hidden="true"></span>
+          <p class="event__label">Wedding Dinner</p>
+          <p class="event__date">Saturday, 26 September 2026</p>
+          <p class="event__hijri">15 Rabi al-Akhir 1448</p>
+          <p class="event__time">Followed by Dinner</p>
+          <p class="event__venue">Indian Auditorium, Neralkatte, Mani</p>
+          <div class="event__actions">
+            <a class="btn btn--sm" id="gcal-reception" target="_blank" rel="noopener">Add to Google Calendar</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="program__ics reveal">
+        <button class="btn btn--ghost" id="ics-both" type="button">Download invitation (.ics)</button>
+      </div>
+    </section>
+
+    <!-- ===== Section 8: LOCATION ===== -->
+    <section id="location" class="location section-pad">
+      <h2 class="title reveal">Venue &amp; Location</h2>
+
+      <article class="venue reveal">
+        <p class="venue__label">Nikah &amp; Wedding Dinner</p>
+        <h3 class="venue__name">Indian Auditorium</h3>
+        <p class="venue__addr">Neralkatte, Mani, Karnataka</p>
+        <p class="venue__hint">Neralkatte junction &middot; Near Mani &middot; Bantwal</p>
+
+        <div class="venue__art">
+          <svg viewBox="0 0 240 150" class="venue-art" fill="none" stroke="currentColor"
+               stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="16" y1="140" x2="224" y2="140"/>
+            <path d="M44 70 L120 34 L196 70 Z"/>
+            <circle cx="86" cy="52" r="1.6"/><circle cx="103" cy="44" r="1.6"/><circle cx="120" cy="40" r="1.6"/><circle cx="137" cy="44" r="1.6"/><circle cx="154" cy="52" r="1.6"/>
+            <path d="M40 70 H200 M40 76 H200"/>
+            <path d="M58 76 V128 M84 76 V128 M156 76 V128 M182 76 V128"/>
+            <path d="M46 128 H194 M40 140 H200 M52 134 H188"/>
+            <path d="M106 128 V100 a14 14 0 0 1 28 0 V128"/>
+          </svg>
+        </div>
+
+        <div class="venue__actions">
+          <a class="btn btn--sm" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/dir/?api=1&amp;destination=Indian%20Auditorium%20Neralkatte%20Mani">Get Directions</a>
+          <a class="btn btn--sm btn--outline" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&amp;query=Indian%20Auditorium%20Neralkatte%20Mani">View on Google Maps</a>
+        </div>
+      </article>
+
+      <!-- Contact / RSVP Card from Card Details -->
+      <article class="venue reveal" style="margin-top: 1.5rem;">
+        <p class="venue__label">For Inquiries &amp; Wishes</p>
+        <h3 class="venue__name" style="font-size: 1.15rem;">Mrs. &amp; Mr. K Abdul Salam</h3>
+        <p class="venue__addr">Kesanamogaru House, Farangipete, Bantwal</p>
+        <p class="venue__hint">Mobile: +91 9845007212</p>
+        <div class="venue__actions">
+          <a class="btn btn--sm" href="tel:+919845007212">Call: +91 9845007212</a>
+          <a class="btn btn--sm btn--outline" target="_blank" rel="noopener" href="https://wa.me/919845007212?text=Heartiest%20Congratulations%20on%20the%20wedding%20of%20Sowreen%20and%20Shamshuddeen!">WhatsApp</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== Section 9: FOOTER ===== -->
+    <footer id="footer" class="footer section-pad">
+      <div class="footer__mono reveal">S <span>&amp;</span> S</div>
+      <p class="footer__dua reveal">&ldquo;Your dua and blessings are the best gift for us&rdquo;</p>
+      <p class="footer__insha script reveal">Insha Allah</p>
+      <p class="footer__compliments reveal">With best compliments from Relatives &amp; Friends</p>
+
+      <a class="credit reveal" href="https://www.citymartindia.com/" target="_blank" rel="noopener"
+         aria-label="Designed and printed by Citymart — cards and graphics">
+        <span class="credit__by">Designed &amp; printed by</span>
+        <img class="credit__logo" src="assets/citymart-logo.svg" width="74"
+             alt="Citymart — cards & graphics" />
+      </a>
+    </footer>
+
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

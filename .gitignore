@@ -1,0 +1,29 @@
+# Local Claude settings (machine-specific)
+.claude/settings.local.json
+
+# Dependencies / build tooling
+node_modules/
+package-lock.json
+package.json
+
+# Vercel
+.vercel/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large source media (extract smaller assets from these; don't ship them)
+assets/*.MOV
+assets/*.mov
+# Source music kept locally only — music.mp3 is the shipped, re-encoded track
+assets/Muad*.mp3
+# Stray documents dropped into assets must never be published (may be sensitive)
+assets/*.pdf
+
+# Internal reuse notes — kept in the folder, not served on the site
+REUSE-PROMPT.md
+*.pdf
+Animate_this_image_with_a_slow.mp4
+Detailed_Prompt_for_Generation.mp4
+Invitaciones Digitales de Boda*

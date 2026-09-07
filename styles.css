@@ -760,9 +760,11 @@ body.cover-active { overflow: hidden; height: 100svh; }
   margin: 0.6em auto;
 }
 .footer__insha {
-  font-size: 2.6rem;
-  color: var(--gold-deep);
-  margin: 0.2em 0 0.6em;
+  font-size: clamp(2.6rem, 8.5vw, 3.3rem);
+  color: #fff1c7;
+  text-shadow: 0 2px 14px rgba(28, 39, 64, 0.75), 0 0 24px rgba(230, 207, 148, 0.45);
+  margin: 0.25em 0 0.6em;
+  letter-spacing: 0.02em;
 }
 .footer__compliments {
   font-family: var(--f-caps);
